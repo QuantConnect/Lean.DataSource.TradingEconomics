@@ -36,6 +36,11 @@ namespace QuantConnect.DataSource
     /// </summary>
     public class TradingEconomicsCalendar : BaseData
     {
+        /// <summary>
+        /// Data source ID
+        /// </summary>
+        public static int DataSourceId { get; } = 2002;
+
         // Filtered calendar event name
         private string _filteredEvent;
         private string _originalEvent;

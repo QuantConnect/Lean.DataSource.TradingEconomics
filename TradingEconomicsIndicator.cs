@@ -31,6 +31,11 @@ namespace QuantConnect.DataSource
     public class TradingEconomicsIndicator : BaseData
     {
         /// <summary>
+        /// Data source ID
+        /// </summary>
+        public static int DataSourceId { get; } = 2004;
+
+        /// <summary>
         /// Country name
         /// </summary>
         [JsonProperty(PropertyName = "Country")]

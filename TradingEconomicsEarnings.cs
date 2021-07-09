@@ -27,6 +27,11 @@ namespace QuantConnect.DataSource
     public class TradingEconomicsEarnings : BaseData
     {
         /// <summary>
+        /// Data source ID
+        /// </summary>
+        public static int DataSourceId { get; } = 2003;
+
+        /// <summary>
         /// Release time and date in UTC
         /// </summary>
         [JsonProperty(PropertyName = "Date"), JsonConverter(typeof(TradingEconomicsDateTimeConverter))]
