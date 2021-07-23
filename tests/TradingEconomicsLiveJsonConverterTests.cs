@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using QuantConnect.DataProcessing;
 using QuantConnect.DataSource;
+using QuantConnect.DataSource.DataQueueHandlers;
 
 namespace QuantConnect.DataLibrary.Tests
 {
