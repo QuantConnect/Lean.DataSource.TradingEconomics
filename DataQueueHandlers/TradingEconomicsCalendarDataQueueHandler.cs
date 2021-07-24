@@ -13,6 +13,8 @@
  * limitations under the License.
 */
 
+using ProtoBuf;
+using ProtoBuf.Meta;
 using Newtonsoft.Json;
 using QuantConnect.Configuration;
 using QuantConnect.Data;
@@ -89,6 +91,8 @@ namespace QuantConnect.DataSource.DataQueueHandlers
         /// <param name="heartbeatTimeout">Seconds after expected heartbeat interval to consider the connection timed out</param>
         public TradingEconomicsCalendarDataQueueHandler()
         {
+            RuntimeTypeModel.Default[typeof(BaseData)].AddSubType(TradingEconomicsCalendar.DataSourceId, typeof(TradingEconomicsCalendar));
+
             _dataAggregator = Composer.Instance.GetPart<IDataAggregator>() ?? 
                 Composer.Instance.GetExportedValueByTypeName<IDataAggregator>(Config.Get("data-aggregator", "QuantConnect.Data.Common.CustomDataAggregator"));
 
