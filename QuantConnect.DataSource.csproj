@@ -6,6 +6,7 @@
     <AssemblyName>QuantConnect.DataSource.TradingEconomics</AssemblyName>
     <OutputPath>bin\$(Configuration)</OutputPath>
     <DocumentationFile>$(OutputPath)\QuantConnect.DataSource.TradingEconomics.xml</DocumentationFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
   <ItemGroup>
