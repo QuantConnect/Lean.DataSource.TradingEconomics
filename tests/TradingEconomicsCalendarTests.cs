@@ -40,7 +40,7 @@ namespace QuantConnect.DataLibrary.Tests
             AssertAreEqual(expected, result);
         }
 
-        [Test, Ignore("ProtoBuf not implemented for this data source")]
+        [Test]
         public void ProtobufRoundTrip()
         {
             var expected = CreateNewInstance();
@@ -93,25 +93,25 @@ namespace QuantConnect.DataLibrary.Tests
                 Time = DateTime.Today,
                 DataType = MarketDataType.Base,
 
-		CalendarId = "0123456789",
-		Country = "Japan",
-		Category = "Macroeconomics",
-		Event = "Inflation Index",
-		EventRaw = "Inflation Index - Bank of Japan",
-		Reference = "2020-2021",
-		Source = "Bank of Japan",
-		Actual = -0.02m,
-		Previous = -0.03m,
-		Forecast = -0.01m,
-		TradingEconomicsForecast = null,
-		DateSpan = "1",
-		Importance = TradingEconomicsImportance.High,
-		LastUpdate = new DateTime(2021, 1, 1),
-		Revised = null,
-		OCountry = "Japan",
-		OCategory = "Macroeconomics",
-		Ticker = "JPN.INFIDX",
-		IsPercentage = true
+                CalendarId = "0123456789",
+                Country = "Japan",
+                Category = "Macroeconomics",
+                Event = "Inflation Index",
+                EventRaw = "Inflation Index - Bank of Japan",
+                Reference = "2020-2021",
+                Source = "Bank of Japan",
+                Actual = -0.02m,
+                Previous = -0.03m,
+                Forecast = -0.01m,
+                TradingEconomicsForecast = null,
+                DateSpan = "1",
+                Importance = TradingEconomicsImportance.High,
+                LastUpdate = new DateTime(2021, 1, 1),
+                Revised = null,
+                OCountry = "Japan",
+                OCategory = "Macroeconomics",
+                Ticker = "JPN.INFIDX",
+                IsPercentage = true
             };
         }
     }

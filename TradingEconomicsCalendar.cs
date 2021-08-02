@@ -15,6 +15,8 @@
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ProtoBuf;
+using ProtoBuf.Meta;
 using QuantConnect.Data;
 using QuantConnect.Data.UniverseSelection;
 using QuantConnect.Logging;
@@ -34,6 +36,7 @@ namespace QuantConnect.DataSource
     /// The economic calendar covers around 1600 events for more than 150 countries a month.
     /// https://docs.tradingeconomics.com/#events
     /// </summary>
+    [ProtoContract(SkipConstructor = true)]
     public class TradingEconomicsCalendar : BaseData
     {
         /// <summary>
@@ -42,8 +45,12 @@ namespace QuantConnect.DataSource
         public static int DataSourceId { get; } = 2002;
 
         // Filtered calendar event name
+        [ProtoMember(23)]
         private string _filteredEvent;
+
+        [ProtoMember(24)]
         private string _originalEvent;
+
         private const string _baseUrl = "https://api.tradingeconomics.com";
 
         /// <summary>
@@ -59,6 +66,7 @@ namespace QuantConnect.DataSource
         /// <summary>
         /// Unique calendar ID used by Trading Economics
         /// </summary>
+        [ProtoMember(20)]
         [JsonProperty(PropertyName = "CalendarId")]
         public string CalendarId { get; set; }
 
@@ -75,12 +83,14 @@ namespace QuantConnect.DataSource
         /// <summary>
         /// Country name
         /// </summary>
+        [ProtoMember(21)]
         [JsonProperty(PropertyName = "Country")]
         public string Country { get; set; }
 
         /// <summary>
         /// Indicator category name
         /// </summary>
+        [ProtoMember(22)]
         [JsonProperty(PropertyName = "Category")]
         public string Category { get; set; }
 
@@ -111,36 +121,42 @@ namespace QuantConnect.DataSource
         /// <summary>
         /// The period for which released data refers to
         /// </summary>
+        [ProtoMember(25)]
         [JsonProperty(PropertyName = "Reference")]
         public string Reference { get; set; }
 
         /// <summary>
         /// Source of data
         /// </summary>
+        [ProtoMember(26)]
         [JsonProperty(PropertyName = "Source")]
         public string Source { get; set; }
 
         /// <summary>
         /// Latest released value
         /// </summary>
+        [ProtoMember(27)]
         [JsonProperty(PropertyName = "Actual")]
         public decimal? Actual { get; set; }
 
         /// <summary>
         /// Value for the previous period after the revision (if revision is applicable)
         /// </summary>
+        [ProtoMember(28)]
         [JsonProperty(PropertyName = "Previous")]
         public decimal? Previous { get; set; }
 
         /// <summary>
         /// Average forecast among a representative group of economists
         /// </summary>
+        [ProtoMember(29)]
         [JsonProperty(PropertyName = "Forecast")]
         public decimal? Forecast { get; set; }
 
         /// <summary>
         /// TradingEconomics own projections
         /// </summary>
+        [ProtoMember(30)]
         [JsonProperty(PropertyName = "TEForecast")]
         public decimal? TradingEconomicsForecast { get; set; }
 
@@ -148,18 +164,21 @@ namespace QuantConnect.DataSource
         /// 0 indicates that the time of the event is known,
         /// 1 indicates that we only know the date of event, the exact time of event is unknown
         /// </summary>
+        [ProtoMember(31)]
         [JsonProperty(PropertyName = "DateSpan")]
         public string DateSpan { get; set; }
 
         /// <summary>
         /// Importance of a TradingEconomics information
         /// </summary>
+        [ProtoMember(32)]
         [JsonProperty(PropertyName = "Importance")]
         public TradingEconomicsImportance Importance { get; set; }
 
         /// <summary>
         /// Time when new data was inserted or changed
         /// </summary>
+        [ProtoMember(33)]
         [JsonProperty(PropertyName = "LastUpdate"), JsonConverter(typeof(TradingEconomicsDateTimeConverter))]
         public DateTime LastUpdate { get; set; }
 
@@ -169,30 +188,35 @@ namespace QuantConnect.DataSource
         /// <remarks>
         /// If there is no revision field remains empty
         /// </remarks>
+        [ProtoMember(34)]
         [JsonProperty(PropertyName = "Revised")]
         public decimal? Revised { get; set; }
 
         /// <summary>
         /// Country's original name
         /// </summary>
+        [ProtoMember(35)]
         [JsonProperty(PropertyName = "OCountry")]
         public string OCountry { get; set; }
 
         /// <summary>
         /// Category's original name
         /// </summary>
+        [ProtoMember(36)]
         [JsonProperty(PropertyName = "OCategory")]
         public string OCategory { get; set; }
 
         /// <summary>
         /// Unique ticker used by Trading Economics
         /// </summary>
+        [ProtoMember(37)]
         [JsonProperty(PropertyName = "Ticker")]
         public string Ticker { get; set; }
 
         /// <summary>
         /// Indicates whether the Actual, Previous, Forecast, TradingEconomicsForecast fields are reported as percent values
         /// </summary>
+        [ProtoMember(38)]
         public bool IsPercentage { get; set; }
 
         /// <summary>
