@@ -28,7 +28,7 @@ namespace QuantConnect.DataProcessing
         public CalendarCodeGen()
         {
             _codegenOutputPath = Config.Get("trading-economics-calendar-codegen-output-path", Path.Combine("..", "..", "..", "..", "Lean", "Common", "Data", "Custom", "TradingEconomics", "TradingEconomics.Calendar.cs"));
-            _qcHeader.Add("namespace QuantConnect.Data.Custom.TradingEconomics");
+            _qcHeader.Add("namespace QuantConnect.DataSource.TradingEconomics");
             _qcHeader.Add("{");
             _qcHeader.Add("    /// <summary>");
             _qcHeader.Add("    /// TradingEconomics static class contains shortcut definitions of major Trading Economics Indicators available");
@@ -70,7 +70,7 @@ namespace QuantConnect.DataProcessing
                     {
                         var category = categoryGroup.First().Category;
                         var fieldName = Normalize(category).Replace("-", "");
-                        var ticker = Normalize(countryCalendar.Country.ToLowerInvariant().Replace(' ', '-')) + Data.Custom.TradingEconomics.TradingEconomics.Calendar.Delimiter + tickerGroup.Key.ToUpperInvariant().Replace(' ', '-');
+                        var ticker = Normalize(countryCalendar.Country.ToLowerInvariant().Replace(' ', '-')) + TradingEconomics.Calendar.Delimiter + tickerGroup.Key.ToUpperInvariant().Replace(' ', '-');
 
                         countryCalendar.Add(category, fieldName, ticker);
                     }

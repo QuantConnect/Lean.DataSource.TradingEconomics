@@ -60,7 +60,7 @@ namespace QuantConnect.DataLibrary.Tests
                     Actual = 0.0405m,
                     Previous = 0.0405m,
                     LastUpdate = new DateTime(2020, 3, 20, 1, 30, 0),
-                    Symbol = QuantConnect.Data.Custom.TradingEconomics.TradingEconomics.Calendar.China.InterestRate
+                    Symbol = TradingEconomics.Calendar.China.InterestRate
                 },
                 new LiveCalendarEventTestParameters
                 {
@@ -72,7 +72,7 @@ namespace QuantConnect.DataLibrary.Tests
                     Actual = 0.025m,
                     Previous = -0.01m,
                     LastUpdate = new DateTime(2020, 3, 20, 11, 0, 0),
-                    Symbol = QuantConnect.Data.Custom.TradingEconomics.TradingEconomics.Calendar.Ireland.ProducerPrices
+                    Symbol = TradingEconomics.Calendar.Ireland.ProducerPrices
                 },
                 new LiveCalendarEventTestParameters
                 {
@@ -84,7 +84,7 @@ namespace QuantConnect.DataLibrary.Tests
                     Actual = -0.019m,
                     Previous = -0.013m,
                     LastUpdate = new DateTime(2020, 3, 20, 11, 0, 0),
-                    Symbol = QuantConnect.Data.Custom.TradingEconomics.TradingEconomics.Calendar.Latvia.ProducerPricesChange
+                    Symbol = TradingEconomics.Calendar.Latvia.ProducerPricesChange
                 },
                 new LiveCalendarEventTestParameters
                 {
@@ -96,7 +96,7 @@ namespace QuantConnect.DataLibrary.Tests
                     Actual = 0.004m,
                     Previous = 0.003m,
                     LastUpdate = new DateTime(2020, 3, 20, 11, 0, 0),
-                    Symbol = QuantConnect.Data.Custom.TradingEconomics.TradingEconomics.Calendar.Luxembourg.GDPGrowthRate
+                    Symbol = TradingEconomics.Calendar.Luxembourg.GDPGrowthRate
                 },
                 new LiveCalendarEventTestParameters
                 {
@@ -108,7 +108,7 @@ namespace QuantConnect.DataLibrary.Tests
                     Actual = 0.082m,
                     Previous = 0.077m,
                     LastUpdate = new DateTime(2020, 3, 20, 10, 0, 0),
-                    Symbol = QuantConnect.Data.Custom.TradingEconomics.TradingEconomics.Calendar.Slovenia.UnemploymentRate
+                    Symbol = TradingEconomics.Calendar.Slovenia.UnemploymentRate
                 },
                 new LiveCalendarEventTestParameters
                 {
@@ -120,7 +120,7 @@ namespace QuantConnect.DataLibrary.Tests
                     Actual = 0.065m,
                     Previous = -0.013m,
                     LastUpdate = new DateTime(2020, 3, 20, 14, 0, 0),
-                    Symbol = QuantConnect.Data.Custom.TradingEconomics.TradingEconomics.Calendar.UnitedStates.ExistingHomeSales
+                    Symbol = TradingEconomics.Calendar.UnitedStates.ExistingHomeSales
                 },
                 new LiveCalendarEventTestParameters
                 {
@@ -132,7 +132,7 @@ namespace QuantConnect.DataLibrary.Tests
                     Actual = 5770000m,
                     Previous = 5460000m,
                     LastUpdate = new DateTime(2020, 3, 20, 14, 0, 0),
-                    Symbol = QuantConnect.Data.Custom.TradingEconomics.TradingEconomics.Calendar.UnitedStates.ExistingHomeSales
+                    Symbol = TradingEconomics.Calendar.UnitedStates.ExistingHomeSales
                 },
             }.Select(x => new TestCaseData(x).SetName(x.Name)).ToArray();
         }

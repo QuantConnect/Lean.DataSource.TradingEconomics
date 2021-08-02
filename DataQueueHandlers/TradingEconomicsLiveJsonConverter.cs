@@ -85,7 +85,7 @@ namespace QuantConnect.DataSource.DataQueueHandlers
             instance.IsPercentage = isPercent;
 
             var ticker = instance.Country.Replace(" ", "-").ToUpperInvariant() +
-                Data.Custom.TradingEconomics.TradingEconomics.Calendar.Delimiter +
+                TradingEconomics.Calendar.Delimiter +
                 instance.Ticker.Replace(" ", "");
             instance.Symbol = Symbol.Create(ticker, SecurityType.Base, Market.USA, baseDataType: typeof(TradingEconomicsCalendar));
 

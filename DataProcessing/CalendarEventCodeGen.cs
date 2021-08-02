@@ -28,7 +28,7 @@ namespace QuantConnect.DataProcessing
         public CalendarEventCodeGen()
         {
             _codegenOutputPath = Config.Get("trading-economics-events-codegen-output-path", Path.Combine("..", "..", "..", "..", "Lean", "Common", "Data", "Custom", "TradingEconomics", "TradingEconomics.Event.cs"));
-            _qcHeader.Add("namespace QuantConnect.Data.Custom.TradingEconomics");
+            _qcHeader.Add("namespace QuantConnect.DataSource.TradingEconomics");
             _qcHeader.Add("{");
             _qcHeader.Add("    /// <summary>");
             _qcHeader.Add("    /// TradingEconomicsCalendarEvents contains all events normalized for your convenience");
